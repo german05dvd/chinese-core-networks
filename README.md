@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Abstract
+##  Abstract
 
 This project applies **complex network analysis** to Mandarin Chinese vocabulary to identify a **minimal subset of characters** that maximizes coverage of the analyzed bisyllabic corpus. Using the [CEDICT](https://www.mdbg.net/chinese/dictionary?page=cedict) dictionary and the [SUBTLEX-CH](https://www.ugent.be/pp/experimentele-psychologie/en/research/documents/subtlexch) frequency corpus, we construct a **weighted graph** where nodes are characters and edges represent their co-occurrence in two-character words.
 
@@ -232,7 +232,7 @@ Centrality metrics, especially **betweenness**, capture the combinatorial import
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 
 - [ ] Extend analysis to 3- and 4-character words
 - [ ] Empirical validation via controlled trials with CSL (Chinese as Second Language) students
@@ -242,33 +242,32 @@ Centrality metrics, especially **betweenness**, capture the combinatorial import
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 chinese-core-networks/
-├── data/
-│   ├── cedict_ts.u8              # CEDICT dictionary
-│   └── SUBTLEX-CH-WF.txt         # SUBTLEX-CH frequency corpus
+├── data/ 
+│   ├── CEDICT.txt              
+│   └── SUBTLEX-CH.txt
 ├── scripts/
-│   ├── histograma.py             # Fig. 1: Word length distribution
-│   ├── grafos.py                 # G₂ construction, metrics, WDkS
-│   ├── game.py                   # Carroll graph and WDkS
-│   └── comparacion.py            # G₂ vs G_Carroll comparison
+│   ├── histograma.py             
+│   ├── grafos.py                 
+│   ├── game.py                   
+│   └── comparacion.py            
 ├── results/
-│   ├── estadisticas_g2.csv       # Centrality metrics
-│   ├── resultados_WDkS.csv       # WDkS curve for G₂
-│   ├── resultados_WDkS_carroll.csv # WDkS curve for Carroll
-│   └── figures/                  # Generated figures
+|   # may past also the stas (.csv) that generate by yourself
+│   └── figures/ # names are different on the script                  
 │       ├── histograma.png
 │       ├── estadisticas_g2.png
 │       ├── figura_principal_wdks.png
 │       ├── comparacion_wdks.png
 │       └── carroll_wdks.png
 ├── paper/
-│   └── RojasLam_2026_JCE.pdf     # Full article (Jornada Científica Estudiantil 2026)
+│   └── articulo.pdf
 ├── README.md
 └── requirements.txt
 ```
+> **On the scripts the paths are differents**, this is just an example of how to configure
 
 ---
 
@@ -305,7 +304,7 @@ python scripts/comparacion.py       # Generate final comparison figure
 
 ---
 
-## 📚 References
+##  References
 
 1. Packard, J. L. (2000). *The Morphology of Chinese*. Cambridge University Press.
 2. Newman, M. E. J. (2010). *Networks: An Introduction*. Oxford University Press.
@@ -316,27 +315,12 @@ python scripts/comparacion.py       # Generate final comparison figure
 
 ---
 
-## 👤 Author
+##  Author
 
 **Germán D. Rojas Lam**  
-12th year, Faculty of Physics, University of Havana, Cuba  
-📧 [your-email@example.com]
-
-**Supervisor**: Dr. Alejandro Lage  
-Center for Complex Systems, Faculty of Physics, University of Havana
-
-Presented at the **Jornada Científica Estudiantil 2026**
+Faculty of Physics, University of Havana, Cuba  
+gdavid.rojaslam@gmail.com
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License**. The CEDICT and SUBTLEX-CH datasets are subject to their respective original licenses.
-
 ---
-
-## 🙏 Acknowledgments
-
-- Dr. Alejandro Lage for guidance and supervision
-- Center for Complex Systems, Faculty of Physics, University of Havana
-- CEDICT and SUBTLEX-CH contributors for making essential linguistic data openly available
