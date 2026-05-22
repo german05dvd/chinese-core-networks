@@ -106,7 +106,7 @@ This behavior is **not visible in a pure frequency list**, where 子 appears in 
 ### Figure 2: Centrality Statistics — G2
 
 <p align="center">
-  <img src="results/figures/estadisticas_G2.png" width="600" alt="Figure 2">
+  <img src="results/figures/estadisticas_g2.png" width="600" alt="Figure 2">
 </p>
 
 <p align="center"><i>
