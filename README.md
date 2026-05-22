@@ -2,10 +2,6 @@
 
 > **The Minimum Core of Chinese**: Complex network analysis applied to Mandarin Chinese bisyllabic vocabulary to identify an optimal minimal subset of characters that maximizes corpus coverage.
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
-[![NetworkX](https://img.shields.io/badge/NetworkX-2.x-green.svg)](https://networkx.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 ---
 
 ##  Abstract
