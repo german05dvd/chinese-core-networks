@@ -267,7 +267,7 @@ chinese-core-networks/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Requirements
 
