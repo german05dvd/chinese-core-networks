@@ -31,7 +31,7 @@ In this work, we build and analyze the **character co-occurrence graph** of Chin
 ### Figure 1: Word Length Distribution
 
 ```markdown
-![Figure 1: Distribution of word lengths in CEDICT dictionary (salmon) and SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length.](./results/figures/histograma.png)
+![Figure 1: Distribution of word lengths in CEDICT dictionary (salmon) and SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length.](results/figures/histograma.png)
 ```
 
 *Figure 1: Distribution of word length in the CEDICT dictionary (salmon) and the SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length. Dashed lines show mean lengths (dictionary: 2.59, frequency: 2.82).*
@@ -104,7 +104,7 @@ This behavior is **not visible in a pure frequency list**, where 子 appears in 
 ### Figure 2: Centrality Statistics — G₂ vs G_Carroll
 
 ```markdown
-![Figure 2: Centrality statistics. Left: G₂ (character network)—degree distribution, log₁₀(betweenness), and degree vs betweenness scatter. Right: G_Carroll (word network)—same panels. The asymmetry of G₂ contrasts with the homogeneity of G_Carroll.](./results/figures/estadisticas_g2_carroll.png)
+![Figure 2: Centrality statistics. Left: G₂ (character network)—degree distribution, log₁₀(betweenness), and degree vs betweenness scatter. Right: G_Carroll (word network)—same panels. The asymmetry of G₂ contrasts with the homogeneity of G_Carroll.](results/figures/estadisticas_g2_carroll.png)
 ```
 
 *Figure 2: Centrality statistics. Left: G₂ (character network)—degree distribution, log₁₀(betweenness), and degree vs betweenness scatter. Right: G_Carroll (word network)—same panels. The strong degree-betweenness correlation in G₂ (r ≈ 0.85) contrasts with the more symmetric, concentrated distribution in G_Carroll.*
@@ -135,7 +135,7 @@ Figure 3 shows the WDkS result for G₂, representing the **percentage of uncove
 ### Figure 3: WDkS Results for G₂
 
 ```markdown
-![Figure 3: WDkS results for G₂. (a) Optimal selection efficiency (log scale on k); green dot marks the optimal elbow (k* ≈ 1045). (b) Vocabulary saturation: accumulated weight vs number of characters. (c) Marginal gain per additional character. (d) Strategy comparison: WDkS (blue), greedy by degree (orange), and random (green).](./results/figures/figura_principal_wdks.png)
+![Figure 3: WDkS results for G₂. (a) Optimal selection efficiency (log scale on k); green dot marks the optimal elbow (k* ≈ 1045). (b) Vocabulary saturation: accumulated weight vs number of characters. (c) Marginal gain per additional character. (d) Strategy comparison: WDkS (blue), greedy by degree (orange), and random (green).](results/figures/figura_principal_wdks.png)
 ```
 
 *Figure 3: WDkS results for G₂. (a) Optimal selection efficiency; the green dot marks the optimal elbow (k* ≈ 1045). (b) Vocabulary saturation: accumulated weight vs number of characters. (c) Marginal gain per additional character. (d) Strategy comparison: WDkS (optimal, blue), greedy by degree (orange), and random (green).*
@@ -165,7 +165,7 @@ Surprisingly, the **greedy curve is almost identical to WDkS** (Figure 3d). This
 ### Figure 4: WDkS Comparison — G₂ vs G_Carroll
 
 ```markdown
-![Figure 4: WDkS curves: G₂ (characters, salmon) vs G_Carroll (words, green). The character network concentrates weight much more efficiently.](./results/figures/comparacion_wdks.png)
+![Figure 4: WDkS curves: G₂ (characters, salmon) vs G_Carroll (words, green). The character network concentrates weight much more efficiently.](results/figures/comparacion_wdks.png)
 ```
 
 *Figure 4: WDkS curves: G₂ (characters, salmon) vs G_Carroll (words, green). The character network concentrates weight much more efficiently. For 80% coverage, G₂ needs ~16% of nodes while G_Carroll needs >40%.*
@@ -179,7 +179,7 @@ The difference lies in that in G₂, characters act as true **"atoms" of languag
 ### Figure 5: WDkS for G_Carroll
 
 ```markdown
-![Figure 5: WDkS for G_Carroll. Lower weight concentration manifests in a less pronounced elbow and greater fraction of nodes needed for equivalent coverages.](./results/figures/carroll_wdks.png)
+![Figure 5: WDkS for G_Carroll. Lower weight concentration manifests in a less pronounced elbow and greater fraction of nodes needed for equivalent coverages.](results/figures/carroll_wdks.png)
 ```
 
 *Figure 5: WDkS for G_Carroll. Lower weight concentration manifests in a less pronounced elbow and greater fraction of nodes needed for equivalent coverages.*
