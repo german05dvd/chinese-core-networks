@@ -29,14 +29,13 @@ In this work, we build and analyze the **character co-occurrence graph** of Chin
 > **Methodological note**: This restriction must always be kept in mind—the results refer to the **bisyllabic vocabulary** and not to the language as a whole.
 
 ### Figure 1: Word Length Distribution
-
-
-![Figure 1: Distribution of word lengths in CEDICT dictionary (salmon) and SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length.](results/figures/histograma.png)
-<img src="results/figures/histograma.png" width="600" alt="Figure 1">
-
-
-*Figure 1: Distribution of word length in the CEDICT dictionary (salmon) and the SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length. Dashed lines show mean lengths (dictionary: 2.59, frequency: 2.82).*
-
+<p align="center">
+  <img src="./results/figures/histograma.png" width="600" alt="Figure 1">
+</p>
+<p align="center"><i>
+  *Figure 1: Distribution of word length in the CEDICT dictionary (salmon) and the SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length. Dashed lines show mean lengths (dictionary: 2.59, frequency: 2.82).*
+</i>
+</p>
 ---
 
 ## 2. Data and Graph Construction
