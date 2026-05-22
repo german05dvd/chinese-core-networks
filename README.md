@@ -29,11 +29,13 @@ In this work, we build and analyze the **character co-occurrence graph** of Chin
 > **Methodological note**: This restriction must always be kept in mind—the results refer to the **bisyllabic vocabulary** and not to the language as a whole.
 
 ### Figure 1: Word Length Distribution
+
 <p align="center">
   <img src="./results/figures/histograma.png" width="600" alt="Figure 1">
 </p>
+
 <p align="center"><i>
-  *Figure 1: Distribution of word length in the CEDICT dictionary (salmon) and the SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length. Dashed lines show mean lengths (dictionary: 2.59, frequency: 2.82).*
+  Figure 1: Distribution of word length in the CEDICT dictionary (salmon) and the SUBTLEX-CH frequency corpus (green). Two-character words dominate both sets, justifying the restriction to this length. Dashed lines show mean lengths (dictionary: 2.59, frequency: 2.82).
 </i>
 </p>
 ---
@@ -49,9 +51,9 @@ We use two complementary resources:
 
 From CEDICT we extract the **58,850 words of exactly two characters**, which constitute the most productive length in Chinese. To weight connections we use SUBTLEX-CH, which lists word frequencies from movie subtitles, thus reflecting real colloquial usage.
 
-### 2.1 Character Graph (G₂)
+### 2.1 Character Graph (G2)
 
-Combining both resources, we construct the undirected weighted graph G₂ = (V, E, w) where:
+Combining both resources, we construct the undirected weighted graph G2 = (V, E, w) where:
 - V is the set of **6,167 distinct characters**
 - An edge {a,b} exists if a and b appear together in at least one dictionary word
 - The weight w(a,b) is the **sum of SUBTLEX-CH frequencies** of all words containing both characters
@@ -64,13 +66,13 @@ We also construct a **word graph** inspired by Lewis Carroll's word games. Two t
 - 大人 (dàrén, adult) ↔ 大学 (dàxué, university): share first character 大
 - 孩子 (háizi, child) ↔ 桌子 (zhuōzi, table): share second character 子
 
-We take the 10,000 most frequent words from SUBTLEX-CH, keeping only those that also appear in CEDICT as exactly two-character words. This filter reduces the set to **6,774 nodes**. This network, denoted G_Carroll, has edges between words differing in exactly one character; its total weight is about three times that of G₂, but as we shall see, its weight concentration capacity is much lower.
+We take the 10,000 most frequent words from SUBTLEX-CH, keeping only those that also appear in CEDICT as exactly two-character words. This filter reduces the set to **6,774 nodes**. This network, denoted G_Carroll, has edges between words differing in exactly one character; its total weight is about three times that of G2, but as we shall see, its weight concentration capacity is much lower.
 
 ---
 
-## 3. Network Topology of G₂
+## 3. Network Topology of G2
 
-Despite having thousands of nodes, G₂ is a **compact and highly connected network**:
+Despite having thousands of nodes, G2 is a **compact and highly connected network**:
 
 | Property | Value |
 |----------|-------|
@@ -101,15 +103,16 @@ In all of them, **in-degree and out-degree differ notably**, allowing classifica
 
 This behavior is **not visible in a pure frequency list**, where 子 appears in position 8 and 大 in position 12, while 的 (the most frequent particle) occupies first place but has **155 times lower betweenness**.
 
-### Figure 2: Centrality Statistics — G₂ vs G_Carroll
+### Figure 2: Centrality Statistics — G2
 
-```markdown
-![Figure 2: Centrality statistics. Left: G₂ (character network)—degree distribution, log₁₀(betweenness), and degree vs betweenness scatter. Right: G_Carroll (word network)—same panels. The asymmetry of G₂ contrasts with the homogeneity of G_Carroll.](results/figures/estadisticas_g2_carroll.png)
-```
+<p align="center">
+  <img src="results/figures/estadisticas_G2.png" width="600" alt="Figure 2">
+</p>
 
-*Figure 2: Centrality statistics. Left: G₂ (character network)—degree distribution, log₁₀(betweenness), and degree vs betweenness scatter. Right: G_Carroll (word network)—same panels. The strong degree-betweenness correlation in G₂ (r ≈ 0.85) contrasts with the more symmetric, concentrated distribution in G_Carroll.*
-
----
+<p align="center"><i>
+Figure 2: Centrality statistics. Left: G2 (character network)—degree distribution, log₁₀(betweenness), and degree vs betweenness scatter. Right: G_Carroll (word network)—same panels. The strong degree-betweenness correlation in G2 (r ≈ 0.85) contrasts with the more symmetric, concentrated distribution in G_Carroll.
+</i>
+</p>
 
 ## 4. The WDkS Problem and Its Solution
 
@@ -130,15 +133,18 @@ H = -Σ_{⟨i,j⟩} J_{ij} s_i s_j - h Σ_i s_i,    J_{ij} = w_{ij}/4
 
 ## 5. The Minimum Core
 
-Figure 3 shows the WDkS result for G₂, representing the **percentage of uncovered weight** versus the number of characters k. We work with percentages rather than absolute figures because the relevant question is not "how many characters must one learn?" but "what fraction of the total characters do I need to master a given fraction of the language?"
+Figure 3 shows the WDkS result for G2, representing the **percentage of uncovered weight** versus the number of characters k. We work with percentages rather than absolute figures because the relevant question is not "how many characters must one learn?" but "what fraction of the total characters do I need to master a given fraction of the language?"
 
-### Figure 3: WDkS Results for G₂
+### Figure 3: WDkS Results for G2
 
-```markdown
-![Figure 3: WDkS results for G₂. (a) Optimal selection efficiency (log scale on k); green dot marks the optimal elbow (k* ≈ 1045). (b) Vocabulary saturation: accumulated weight vs number of characters. (c) Marginal gain per additional character. (d) Strategy comparison: WDkS (blue), greedy by degree (orange), and random (green).](results/figures/figura_principal_wdks.png)
-```
+<p align="center">
+  <img src="results/figures/figura_principal_wdks.png" width="600" alt="Figure 3">
+</p>
 
-*Figure 3: WDkS results for G₂. (a) Optimal selection efficiency; the green dot marks the optimal elbow (k* ≈ 1045). (b) Vocabulary saturation: accumulated weight vs number of characters. (c) Marginal gain per additional character. (d) Strategy comparison: WDkS (optimal, blue), greedy by degree (orange), and random (green).*
+<p align="center"><i>
+Figure 3: WDkS results for G2. (a) Optimal selection efficiency; the green dot marks the optimal elbow (k* ≈ 1045). (b) Vocabulary saturation: accumulated weight vs number of characters. (c) Marginal gain per additional character. (d) Strategy comparison: WDkS (optimal, blue), greedy by degree (orange), and random (green).
+</i>
+</p>
 
 The curve shows that the **optimal selection efficiency is overwhelming** compared to a proportional (random) choice:
 
@@ -162,27 +168,34 @@ To evaluate WDkS utility, we contrast it with two simpler methods:
 
 Surprisingly, the **greedy curve is almost identical to WDkS** (Figure 3d). This is explained by the **strong degree-weight correlation** in this network: the morphological hubs (子, 大, 人) are simultaneously the most connected nodes and those accumulating the highest-frequency edges. This limits the practical advantage of WDkS over simple degree ranking in the character graph, but validates that connectivity-based methods capture the essence of the problem.
 
-### Figure 4: WDkS Comparison — G₂ vs G_Carroll
+### Figure 4: WDkS Comparison — G2 vs G_Carroll
 
-```markdown
-![Figure 4: WDkS curves: G₂ (characters, salmon) vs G_Carroll (words, green). The character network concentrates weight much more efficiently.](results/figures/comparacion_wdks.png)
-```
+<p align="center">
+  <img src="results/figures/comparacion_wdks.png" width="600" alt="Figure 4">
+</p>
 
-*Figure 4: WDkS curves: G₂ (characters, salmon) vs G_Carroll (words, green). The character network concentrates weight much more efficiently. For 80% coverage, G₂ needs ~16% of nodes while G_Carroll needs >40%.*
+<p align="center"><i>
+Figure 4: WDkS curves: G2 (characters, salmon) vs G_Carroll (words, green). The character network concentrates weight much more efficiently. For 80% coverage, G2 needs ~16% of nodes while G_Carroll needs >40%.
+</i>
+</p>
+
 
 The comparison with the Carroll network reinforces this interpretation. In G_Carroll, weight concentration is much lower:
 - To reach 80% coverage, more than **40% of nodes** are needed
 - The elbow is at **1,923 words (28.4%)** with only **69.3% coverage**
 
-The difference lies in that in G₂, characters act as true **"atoms" of language**, while in the full word network, edges connect vocabulary items that only differ in one character, giving rise to more homogeneous connectivity.
+The difference lies in that in G2, characters act as true **"atoms" of language**, while in the full word network, edges connect vocabulary items that only differ in one character, giving rise to more homogeneous connectivity.
 
 ### Figure 5: WDkS for G_Carroll
 
-```markdown
-![Figure 5: WDkS for G_Carroll. Lower weight concentration manifests in a less pronounced elbow and greater fraction of nodes needed for equivalent coverages.](results/figures/carroll_wdks.png)
-```
+<p align="center">
+  <img src="results/figures/carroll_wdks.png" width="600" alt="Figure 5">
+</p>
 
-*Figure 5: WDkS for G_Carroll. Lower weight concentration manifests in a less pronounced elbow and greater fraction of nodes needed for equivalent coverages.*
+<p align="center"><i>
+Figure 5: WDkS for G_Carroll. Lower weight concentration manifests in a less pronounced elbow and greater fraction of nodes needed for equivalent coverages.
+</i>
+</p>
 
 ---
 
@@ -254,7 +267,7 @@ chinese-core-networks/
 |   # may past also the stas (.csv) that generate by yourself
 │   └── figures/ # names are different on the script                  
 │       ├── histograma.png
-│       ├── estadisticas_g2.png
+│       ├── estadisticas_G2.png
 │       ├── figura_principal_wdks.png
 │       ├── comparacion_wdks.png
 │       └── carroll_wdks.png
